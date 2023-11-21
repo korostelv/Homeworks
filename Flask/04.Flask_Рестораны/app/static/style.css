@@ -1,0 +1,62 @@
+.menu {
+    height: 80px;
+    width: auto;
+    background-color: #4d2508;
+    padding-top: 30px;
+    padding-left: 30px;
+    font-size: 30px;
+}
+
+a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: white;
+   
+}
+
+form {
+    padding: 15px;
+    background-color: bisque;
+    width: 300px;
+}
+
+table {
+    border: 3px solid #c0c0c0;
+    border-collapse: collapse;
+    background-color: bisque;
+}
+
+td,th {
+    border: 1px solid #c0c0c0;
+    height: 30px;
+    text-align: center;
+    padding: 5px;
+}
+
+.link {
+    color: black;
+    margin: auto;
+    border: 2px solid  #c0c0c0;
+    background-color: rgb(219, 141, 38);
+    padding: 5px;
+}
+.message{
+    background-color: aquamarine;
+    padding: 3px;
+    margin: 5px;
+    width: 250px;
+    text-align: center;
+}
+
+select {
+    margin: 10px;
+    width: 250px;
+    background-color: bisque;
+}
+
+.spec {
+    color: black;
+    margin: auto;
+    border: 1px solid  #c0c0c0;
+    padding: 5px;
+}

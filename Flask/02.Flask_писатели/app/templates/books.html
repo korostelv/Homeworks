@@ -1,0 +1,22 @@
+
+
+{% extends "base.html" %}
+
+{% block title %}
+	Топ книг
+{% endblock %}
+
+{% block body %}
+
+	<h1>Топ книг</h1>
+
+	{% for i in range(1,6) %}
+		{% for j in range(top|length) %}
+			{% if i == j+1 %}
+				<a href="/books/{{i}}">{{i}} {{top[j]}}</a><br>
+<!--				{{i}} {{top[j]}}<br>-->
+			{% endif %}
+		{% endfor %}
+	{% endfor %}
+
+{% endblock %}

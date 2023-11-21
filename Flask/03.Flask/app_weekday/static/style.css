@@ -1,0 +1,29 @@
+div {
+    width: 200px;
+    padding: 20px 0px;
+    text-align: center;
+    font-size: 30px;
+
+}
+
+.mo {
+    background-color: #0066CC;
+}
+.tu {
+    background-color: #FFD700;
+}
+.we {
+    background-color: #00FF99;
+}
+.th {
+    background-color: #FF66B2;
+}
+.fr {
+    background-color: #FFA500;
+}
+.sa {
+    background-color: #333333;
+}
+.su {
+    background-color: #FFF5E1;
+}

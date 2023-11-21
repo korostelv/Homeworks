@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}
+	Писатели
+{% endblock %}
+
+{% block body %}
+	<h1>Писатели</h1>
+	<a href="{{ url_for('hemingway') }}">Хемингуэй</a><br>
+	<a href="{{ url_for('shakespeare') }}">Шекспир</a><br>
+{% endblock %}
+

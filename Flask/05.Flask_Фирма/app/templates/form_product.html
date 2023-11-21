@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}
+	Добавить товар
+{% endblock %}
+
+{% block body %}
+	<h1>Форма добавления товара</h1>
+
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for message in messages %}
+				<div class="message">{{ message }}</div>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+
+ 	<form action="" method="post" novalidate>
+            {{form.hidden_tag()}}
+            <p>
+				{{form.name.label}}<br>
+				{{form.name(size=32)}}
+				{% for error in form.name.errors %}
+					<span style="color: red;">[{{ error }}]</span>
+				{% endfor %}
+            </p>
+            <p>
+				{{form.specification.label}}<br>
+				{{form.specification(size=32)}}
+				{% for error in form.specification.errors %}
+					<span style="color: red;">[{{ error }}]</span>
+				{% endfor %}
+            </p>
+            <p>
+                {{form.submit()}}
+            </p>
+        </form>
+{% endblock %}

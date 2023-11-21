@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}
+	Все рестораны
+{% endblock %}
+
+{% block body %}
+	<h1>Все рестораны</h1>
+	<p>Для выбора ресторанов по специализации кликните по необходимой Вам в списке.</p>
+	<table>
+		<tr>
+			<th>Название</th>
+			<th>Специализация</th>
+			<th>Адрес</th>
+			<th>Сайт</th>
+			<th>Номер телефона</th>
+		</tr>
+		{% for rest in restaurants %}
+			<tr>
+				<td>{{rest.name}}</td>
+				<td><a class="spec" href="/{{rest.specialization}}/spec">{{rest.specialization}}</a></td>
+				<td>{{rest.address}}</td>
+				<td>{{rest.website}}</td>
+				<td>{{rest.phone}}</td>
+				<td><a class="link" href="/{{rest.id}}/delete">Удалить</a></td>
+				<td><a class="link" href="/{{rest.id}}/change">Изменить</a></td>
+			</tr>
+		{% endfor %}
+	</table>
+
+{% endblock %}

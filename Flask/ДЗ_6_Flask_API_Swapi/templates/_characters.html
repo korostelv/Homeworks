@@ -1,0 +1,11 @@
+<h3>Characters:</h3>
+<ul>
+
+    {%for name in dict_all_characters%}
+    {% for url_character in film['characters'] %}
+        {% if dict_all_characters[name]== url_character %}
+        <li><a href="/{{ dict_all_numbers_character[name] }}/people">{{ name }}</a></li>
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+</ul>

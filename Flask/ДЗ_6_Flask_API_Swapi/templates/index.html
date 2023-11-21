@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}
+	Главная страница
+{% endblock %}
+
+{% block body %}
+	<h1>Все фильмы</h1>
+		<ul>
+			{% for film in films %}
+				<li><a href="/{{loop.index}}/film">{{ film['title'] }} - Episode {{ film['episode_id'] }}</a></li>
+			{% endfor %}
+		</ul>
+
+{% endblock %}

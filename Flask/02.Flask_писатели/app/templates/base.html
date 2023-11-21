@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <a href="{{ url_for('index') }}">Главная</a><br>
+    <a href="{{ url_for('writers') }}">Писатели</a><br>
+    <a href="{{ url_for('books') }}">Топ книг</a><br>
+    <hr>
+
+    {% block body %}{% endblock %}
+</body>
+</html>

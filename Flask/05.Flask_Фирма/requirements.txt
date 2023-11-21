@@ -1,0 +1,8 @@
+
+virtualenv
+flask
+sqlalchemy
+flask-sqlalchemy
+sqlalchemy-migrate
+flask-wtf
+flask-migrate

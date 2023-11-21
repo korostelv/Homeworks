@@ -1,0 +1,10 @@
+from app.models import Restaurant
+rest1 = Restaurant(name='Rest1',specialization='веганская',address='Lenina-12',website='rest1.ru',phone='+79026324')
+
+flask db init
+flask db migrate -m 'некий текст'
+flask db upgrade
+
+
+
+

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+
+{% block body %}
+
+	{% if weekday==0  %}
+		<div class="mo">Понедельник</div>
+
+	{% elif weekday==1  %}
+		<div class="tu">Вторник</div>
+
+	{% elif weekday==2  %}
+		<div class="we">Среда</div>
+
+	{% elif weekday==3  %}
+		<div class="th">Четверг</div>
+
+	{% elif weekday==4  %}
+		<div class="fr">Пятница</div>
+
+	{% elif weekday==5  %}
+		<div class="sa">Суббота</div>
+
+	{% elif weekday==6  %}
+		<div class="su">Воскресенье</div>
+
+{% endif %}
+{% endblock %}

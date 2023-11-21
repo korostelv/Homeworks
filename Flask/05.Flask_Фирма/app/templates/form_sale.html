@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}
+	Добавить продажу
+{% endblock %}
+
+{% block body %}
+	<h1>Форма добавления продажи</h1>
+
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for message in messages %}
+				<div class="message">{{ message }}</div>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+
+ 	<form action="" method="post" novalidate>
+            {{form.hidden_tag()}}
+            <p>
+				{{form.customer.label}}<br>
+				{{form.customer(size=32)}}
+				{% for error in form.customer.errors %}
+					<span style="color: red;">[{{ error }}]</span>
+				{% endfor %}
+            </p>
+            <p>
+				{{form.seller.label}}<br>
+				{{form.seller(size=32)}}
+				{% for error in form.seller.errors %}
+					<span style="color: red;">[{{ error }}]</span>
+				{% endfor %}
+            </p>
+	 		<p>
+				{{form.product.label}}<br>
+				{{form.product(size=32)}}
+				{% for error in form.product.errors %}
+					<span style="color: red;">[{{ error }}]</span>
+				{% endfor %}
+			</p>
+	 		<p>
+				{{form.date_sale.label}}<br>
+				{{form.date_sale(size=32)}}
+				{% for error in form.date_sale.errors %}
+					<span style="color: red;">[{{ error }}]</span>
+				{% endfor %}
+			</p>
+
+		    <p>
+				{{form.summ.label}}<br>
+				{{form.summ(size=32)}}
+				{% for error in form.summ.errors %}
+					<span style="color: red;">[{{ error }}]</span>
+				{% endfor %}
+            <p>
+                {{form.submit()}}
+            </p>
+        </form>
+{% endblock %}

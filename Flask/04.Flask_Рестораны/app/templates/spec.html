@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}
+	Специализация {{specialization}}
+{% endblock %}
+
+{% block body %}
+	<h1>Рестораны со специализацией {{specialization}}</h1>
+	<table>
+		<tr>
+			<th>Название</th>
+			<th>Адрес</th>
+			<th>Сайт</th>
+			<th>Номер телефона</th>
+		</tr>
+		{% for rest in restaurants %}
+			<tr>
+				<td>{{rest.name}}</td>
+				<td>{{rest.address}}</td>
+				<td>{{rest.website}}</td>
+				<td>{{rest.phone}}</td>
+			</tr>
+		{% endfor %}
+	</table>
+
+{% endblock %}

@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block title %}
+	Информация
+{% endblock %}
+
+{% block body %}
+	<h2>Покупатели</h2>
+
+	<table>
+		<tr>
+			<th>Имя</th>
+			<th>Фамилия</th>
+			<th>Номер телефона</th>
+			<th>Email</th>
+		</tr>
+		{%for customer in customers%}
+		<tr>
+			<td>{{customer.name}}</td>
+			<td>{{customer.surname}}</td>
+			<td>{{customer.phone}}</td>
+			<td>{{customer.email}}</td>
+		</tr>
+		{%endfor%}
+	</table>
+	<br>
+	<h2>Продавцы</h2>
+	<table>
+		<tr>
+			<th>Имя</th>
+			<th>Фамилия</th>
+			<th>Номер телефона</th>
+			<th>Email</th>
+			<th>Дата приема на работу</th>
+			<th>Позиция в фирме</th>
+		</tr>
+		{%for seller in sellers%}
+		<tr>
+			<td>{{seller.name}}</td>
+			<td>{{seller.surname}}</td>
+			<td>{{seller.phone}}</td>
+			<td>{{seller.email}}</td>
+			<td>{{seller.date_employ}}</td>
+			<td>{{seller.position}}</td>
+		</tr>
+		{%endfor%}
+	</table>
+	<br>
+	<h2>Товары</h2>
+	<table>
+		<tr>
+			<th>Название</th>
+			<th>Описание</th>
+		</tr>
+		{%for product in products%}
+		<tr>
+			<td>{{product.name}}</td>
+			<td>{{product.specification}}</td>
+		</tr>
+		{%endfor%}
+	</table>
+	<br>
+	<h2>Продажи</h2>
+	<table>
+		<tr>
+			<th>Клиент</th>
+			<th>Продавец</th>
+			<th>Продукт</th>
+			<th>Дата продажи</th>
+			<th>Сумма продажи</th>
+		</tr>
+		{%for sale in sales%}
+		<tr>
+			<td>{{sale.customer.name}} {{sale.customer.surname}}</td>
+			<td>{{sale.seller.name}} {{sale.seller.surname}}</td>
+			<td>{{sale.product.name}}</td>
+			<td>{{sale.date_sale}}</td>
+			<td>{{sale.summ}}</td>
+		</tr>
+
+
+		{%endfor%}
+	</table>
+{% endblock %}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Стих</title>
+</head>
+<body>
+   <div><a href="/poetry">назад к выбору</a></div>
+    <hr>
+{% for poem in poems %}
+    {% if poem.id == random_poems_id %}
+        <div>
+            <p> {{ poem.author.surname }}</p>
+            <h3>{{ poem.name }}</h3>
+            {% for aut in authors%}
+                {% if aut.id == poem.author %}
+                    <h4>{{ aut.name }} {{ aut.surname }}</h4>
+                {% endif %}
+            {% endfor %}
+            <p>{{ poem.text|linebreaksbr }}</p>
+        </div>
+    {% endif %}
+{% endfor %}
+
+
+{% if author_poems %}
+  {% with random_author=author_poems|random %}
+    <h3>{{ random_author.name }}</h3>
+      {% for aut in authors%}
+        {% if random_author.author == aut.id %}
+            <h4>{{aut.name}} {{aut.surname}}</h4>
+        {% endif %}
+    {% endfor %}
+    <p>{{ random_author.text|linebreaksbr }}</p>
+  {% endwith %}
+{% endif %}
+
+
+
+{% if theme_poems %}
+    {% with random_theme=theme_poems|random %}
+        <h3>{{ random_theme.name }}</h3>
+   {% for aut in authors%}
+        {% if random_theme.author == aut.id %}
+            <h4>{{aut.name}} {{aut.surname}}</h4>
+        {% endif %}
+    {% endfor %}
+        <p>{{ random_theme.text|linebreaksbr }}</p>
+    {% endwith %}
+{% endif %}
+
+
+
+</body>
+</html>

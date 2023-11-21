@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список стихов</title>
+</head>
+<body>
+   <div><a href="/poetry">назад к выбору</a></div>
+   <hr>
+   {% if list_author_id %}
+        {% for aut in autors%}
+            {% if aut.id == list_author_id %}
+                <h3>{{aut.name}} {{aut.surname}}</h3>
+            {% endif %}
+        {% endfor %}
+        <ul>
+        {% for poem in poems %}
+            {% if poem.author == list_author_id %}
+                <li><a href="/crambo/{{ poem.id }}">{{ poem.name }}</a></li>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+
+            {% if list_theme_id %}
+                {% for theme in themes %}
+                    {% if theme.id == list_theme_id %}
+                        <h3>{{ theme.theme }}</h3>
+                    {% endif %}
+                {% endfor %}
+
+                {% for poem in poems %}
+                    {% if poem.theme ==  list_theme_id %}
+                        <li><a href="/crambo/{{ poem.id }}"> {{poem.name}}
+                                                            {% for aut in authors %}
+                                                                {% if aut.id == poem.author %}
+                                                                (<i>{{ aut.name }} {{ aut.surname }}</i>)
+                                                                    {% endif %}
+                                                                {% endfor %}
+
+                        </a></li>
+                    {% endif %}
+                {% endfor %}
+
+            {% endif %}
+</ul>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <div><a href="/">Главная страница</a></div>
+    <div><a href="/today">Дата</a></div>
+    <div><a href="/table">Таблица умножения</a></div>
+    <div><a href="/progday">День программиста</a></div>
+    <hr>
+    {% block body %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Числа</title>
+</head>
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+        Выберите диапазон чисел:
+        <br><br>
+        <label for="from"> От: </label>
+        <input type="text" id="from" name="from">
+        <label for="before"> До: </label>
+        <input type="text" id="before" name="before">
+        <br><br>
+        Выберите количество чисел:
+        <input type="text" id="quant" name="quant">
+        <br><br>
+        <input type="submit" value="Создать">
+    </form>
+
+    {{text}}<br>
+    {% if list %}
+        Ваши числа :
+        {{list|join:" "}}
+    {%endif%}
+
+</body>
+</html>

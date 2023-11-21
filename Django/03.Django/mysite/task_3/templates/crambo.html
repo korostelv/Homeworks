@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Стих</title>
+</head>
+<body>
+
+   <div><a href="/poetry">назад к выбору</a></div>
+   <hr>
+{% for poem in poems %}
+    {% if poem.id  == poem_id%}
+        <h3>{{ poem.name }}</h3>
+           {% for aut in authors%}
+                {% if aut.id == poem.author %}
+                    <h4>{{ aut.name }} {{ aut.surname }}</h4>
+                {% endif %}
+            {% endfor %}
+        <p>{{ poem.text|linebreaksbr }}</p>
+   {% endif %}
+{% endfor %}
+</body>
+</html>

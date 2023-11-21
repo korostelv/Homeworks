@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Numbers</title>
+</head>
+<body>
+<h1>Numbers</h1>
+
+<form action="" method="post">
+    {% csrf_token %}
+    <label for="number_1">Первое число: </label>
+    <input type="text" id="number_1" name="number_1"><br>
+    <label for="number_2">Второе число: </label>
+    <input type="text" id="number_2" name="number_2"><br>
+    <label for="number_3">Третье число: </label>
+    <input type="text" id="number_3" name="number_3"><br>
+
+
+    <input type="radio" id="min" name="numb" value="min" />
+    <label for="min">Минимальное число</label><br>
+    <input type="radio" id="max" name="numb" value="max" />
+    <label for="max">Максимальное число</label><br>
+    <input type="radio" id="average" name="numb" value="average" />
+    <label for="average">Среднеарифметическое чисел</label><br>
+
+    <input type="submit" value="Submit">
+
+</form>
+
+<p>{{text}}</p>
+</body>
+</html>

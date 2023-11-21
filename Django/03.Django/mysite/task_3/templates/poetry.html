@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Поэзия</title>
+</head>
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+       Прочитать любое случайное стихотворение:  <input type="submit" value="Выбрать"><br>
+    </form>
+
+    <form action="" method="post">
+        {% csrf_token %}
+         <label for="author">Прочитать случайное стихотворение выбранного автора:</label>
+        <select id="author" name="author">
+            {% for auth in authors %}
+                <option value="{{auth.id}}">{{auth.name}} {{auth.surname}}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Выбрать">
+    </form>
+
+    <form action="" method="post">
+        {% csrf_token %}
+        <label for="theme">Прочитать случайное стихотворение по теме:</label>
+               <select id="theme" name="theme">
+            {% for theme in themes %}
+                <option value="{{theme.id}}">{{theme.theme}} </option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Выбрать">
+    </form>
+
+    <hr>
+    <hr>
+   <form action="" method="post">
+        {% csrf_token %}
+         <label for="list_author_id">Показать список стихов выбранного автора:</label>
+            <select id="list_author_id" name="list_author_id">
+                {% for auth in authors %}
+                    <option value="{{auth.id}}">{{auth.name}} {{auth.surname}}</option>
+                {% endfor %}
+            </select>
+        <input type="submit" value="Выбрать">
+    </form>
+
+   <form action="" method="post">
+        {% csrf_token %}
+         <label for="list_theme_id">Показать список стихов выбранного автора:</label>
+            <select id="list_theme_id" name="list_theme_id">
+                {% for theme in themes %}
+                    <option value="{{theme.id}}">{{theme.theme}}</option>
+                {% endfor %}
+            </select>
+        <input type="submit" value="Выбрать">
+    </form>
+
+</body>
+</html>

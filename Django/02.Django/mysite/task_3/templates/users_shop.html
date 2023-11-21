@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users_shop</title>
+</head>
+<body>
+<h3>{{user}}</h3>
+<p>Имя: {{user.name}}</p>
+<p>Фамилия: {{user.surname}}</p>
+<p>Возраст:{{user.age}}</p>
+<p>Email: {{user.email}}</p>
+<p>Адрес: {{user.address}}</p>
+{% if user.subscription == True%}
+    <p>Подписан на новости</p>
+{% else %}
+    <p>Не подписан на новости</p>
+{% endif %}
+
+
+
+
+</body>
+</html>

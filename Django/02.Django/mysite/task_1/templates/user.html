@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User</title>
+</head>
+<body>
+
+<p> Добро пожаловать, {{ us }} </p>
+{% if adm == True %}
+    <p> Вы администратор </p>
+{% else %}
+    <p> Вы пользователь </p>
+{% endif %}
+
+</body>
+</html>

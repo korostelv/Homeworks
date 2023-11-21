@@ -1,0 +1,30 @@
+#menu {
+
+	width: 300px;
+	margin: 30px 30px;
+}
+
+.block{
+	background-color: #696969;
+ 	height: 50px;
+	width: 300px;
+	text-align: center;
+	vertical-align: ;
+
+	padding: 6px 10px 5px 0;
+	margin:0px 0 0px;
+
+}
+
+
+
+img {
+	height: 50px;
+	width: 50px;  
+	display: block;     
+	float: left ;
+}
+
+.block:hover {
+	background-color: 	#4F4F4F
+}

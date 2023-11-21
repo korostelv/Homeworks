@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Contact form</title>
+</head>
+<body>
+ 	<div id="container">   
+	    <h1>Contact form</h1>
+	    <p>Please fill your information and well be sending your order.</p>
+
+    <form >
+	    	<div class="uname">
+		        <span>Your name</span>
+		        <div class="n">
+			        <input type="text" id="uname" name="userName" placeholder="first name"/>
+			        <input type="text" id="uname" name="userName" placeholder="last name"/>
+	    		</div>
+	       	</div>
+	        	<br>
+	        <div class="umail">
+		        <span>Your email</span>
+			    <input type="text" id="umail" name="userMail"   placeholder="your mail@mail.com">
+	    	</div>
+	        	<br>
+	        <div class="uphone">	
+	        	<span>Phone*</span>
+	        	<div class="p">
+			        <input type="text" id="uphone"	name="userPhone" placeholder="000"/>
+			        <input type="text" id="uphone"	name="userPhone" placeholder="000"/>
+			        <input type="text" id="uphone"	name="userPhone" placeholder="0000"/>
+		   		</div>
+	    	</div>
+	        	<br>
+	        <div class="message"
+		        <span>Message subject*</span>
+		        <select name="userMessage_subject" id="messub">
+		        <option value="Other">Other</option>
+		        <option value="Wiches">Wishes</option>
+		        <option value="Problems">Problems</option>
+		        </select>
+	    	</div>
+	        <br>
+	        <div class="message1">
+		        <span>Message*</span>
+		        <textarea name="userMessage" id="umessage" cols="80" rows="3"></textarea>
+	    	</div>
+	        <br>
+	        <hr>
+
+	        <label for="submit"></label>
+	        <input type="submit" id="submit" value="SUBMIT FORM">
+		</form>
+
+	</div>
+</body>
+</html>

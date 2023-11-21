@@ -1,0 +1,100 @@
+*, *::before, *, *::after {
+    box-sizing: border-box;
+ }
+
+ #conteiner {
+ 	width: 1200px;
+ 	height: 1000px;
+ 	margin: 0 auto;
+ 	background-color: #ff4600;
+ 	overflow: auto;
+ }
+
+ .a {
+ 
+ 	width: 500px;
+ 	height: 500px;
+ 	background: #ccc;
+ 	margin-left:auto;
+ 	margin-right: auto;
+ 	margin-top: 50px;
+ }
+
+ h2	{
+ 	text-align: center;
+ 	padding-top: 40px;
+	padding-bottom: 40px;
+ }
+
+#uname, #passw {
+
+	margin-right: auto;
+	margin-left: auto;
+	width: 350px;
+	height: 40px;
+	display: block;
+	text-align: center;
+}
+
+.login {
+	width: 350px;
+	height: 40px;
+	margin-top: 30px;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: green;
+	color: white;
+	font-weight: bold;
+	border: none;
+	font-size: 1.2em;
+	display: block
+}
+
+a {
+	text-align: center;
+	display: block;
+	margin-top:40px;
+	text-decoration: none;
+	color:#ff4600;
+}
+
+p {
+	text-align: center;
+	color: white;
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+.fac, .tw {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 220px;
+	height: 40px;
+	color: white;
+	border: none;
+
+
+}
+.fac {
+	float: left;
+	margin-left: 350px;
+	background: url(icons/facebook.png)  no-repeat;
+	background-size: 30px;
+	background-position-y:center ;
+	background-position-x: 40px;
+	background-color: #135695;
+	
+
+}
+
+
+.tw {
+	float:right;
+	margin-right: 350px;
+	background: url(icons/twitter-circled.png) no-repeat;
+	background-size: 30px ;
+	background-position-y:center ;
+	background-position-x: 40px;
+	background-color: #0984df;
+}

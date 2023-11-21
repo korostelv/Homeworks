@@ -1,0 +1,40 @@
+* {
+	
+	font-family:Verdana,Geneva,sant-serif;
+}
+
+h1{
+	
+	text-align: center;
+
+}
+
+blockquote{
+	
+	text-align: right;
+
+}
+
+.darkgrey{
+	
+	color: #363636;
+
+}
+
+.grey{
+	
+	color: #696969;
+
+}
+
+.grey1{
+	
+	color: #9C9C9C;
+
+}
+
+.lightgrey{
+	
+	color: #CFCFCF;
+
+}

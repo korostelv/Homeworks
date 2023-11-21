@@ -1,0 +1,42 @@
+* {
+	font-size: 18px;
+	margin: 10px 0px 0px 5px;
+	padding: ;
+}
+
+p {
+
+	font-size: 20px;
+}
+
+
+#ear ul {
+	
+	list-style-image: url("icons/arrow_16.png");
+	
+
+}
+
+#winter ul li {
+	
+	list-style-image: url("icons/winter_16.png");
+
+}
+
+#spring ul li {
+	
+	list-style-image: url("icons/spring_16.png");
+
+}
+
+#summer ul li {
+	
+	list-style-image: url("icons/summer_16.png");
+
+}
+
+#autumn ul li {
+	
+	list-style-image: url("icons/autumn_16.png");
+
+}

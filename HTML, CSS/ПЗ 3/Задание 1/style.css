@@ -1,0 +1,13 @@
+
+body {
+	font-size: 18px;
+	background-image: url(image.jpg);
+	color:white;
+	background-attachment: fixed;
+
+}
+
+#text {
+	margin:0 200px;
+	background-color: 	rgba(54,54,54,0.8);
+}

@@ -1,0 +1,24 @@
+
+
+.latin li {
+	list-style-type: lower-latin;
+}
+
+.decimal {
+	list-style-type: :decimal;
+}
+.rim {
+	list-style-type: upper-roman;
+	font-weight: bold;
+	
+}
+
+
+
+
+
+
+.color {
+	color:  #67fe;
+	 font-weight: normal; 
+}

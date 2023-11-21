@@ -1,0 +1,27 @@
+
+
+ ol { 
+	font-size: 36px;
+	background: #fe7b00;
+	margin: 100px 100px 10px 100px;
+	padding: 0px 0px 0px 50px;
+	color: white;
+	border: 1px solid #fff;
+	height: auto;
+	width: 30%;
+
+}
+
+ 
+ ol li {
+
+	background: #D94E1C;
+	margin: 5px 50px 5px -5px;
+	padding: 0px 0px 0px 5px;
+	width:auto ;
+	list-style-position: inside;
+	
+	
+}
+
+

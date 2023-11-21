@@ -1,0 +1,31 @@
+/*
+dt {
+	background-color:#365A42;
+}
+
+dd {
+	background-color: #2E7545;
+	margin-left:auto;
+	margin-bottom: 10px;
+}
+
+#wh {
+	color: white;
+}
+*/
+
+dt {
+	background-color:#365A42;
+	padding: 0px 40px;
+}
+
+dd {
+	background-color: #2E7545;
+	margin-left:auto;
+	margin-bottom: 10px;
+	padding: 0px 20px;
+}
+
+#wh {
+	color: white;
+}

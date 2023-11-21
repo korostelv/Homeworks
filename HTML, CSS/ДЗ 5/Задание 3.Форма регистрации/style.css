@@ -1,0 +1,119 @@
+*, *::before, *, *::after {
+    box-sizing: border-box;
+ }
+
+#container {
+	width: 1200px;
+	height: 350px;
+    margin:0 auto;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 0 4px 4px rgba(79, 79, 79, 0.3 );
+
+ 
+}
+
+#block {
+    display: inline-block;
+    
+}
+img {
+    width: 20px;
+    height: 20px;
+
+}
+
+.reg {
+  
+    width: 560px;
+    float:left;
+    padding: 0 10px;
+  
+}
+
+input {
+	border: none;
+	border-bottom: 1px solid black;
+	padding-top: 15px;
+	padding-left: 10px;
+}
+
+#gender {
+	border: none;
+	border-bottom: 1px solid black;
+}
+
+#uname {
+    width: 510px;
+}
+
+#email {
+    width: 510px;
+}
+
+#passwd {
+    width: 253px;
+}
+
+#name, #birthday, #gender {
+	width: 268px;
+}
+
+.check {
+	margin-top: 20px;
+}
+
+input.submit {
+	background: #4682B4;
+	color:white;
+	padding-bottom: 12px;
+	width: 120px;
+	float: right;
+	margin-top: 20px;
+}
+
+
+ 
+@media only screen and (max-width: 900px) {
+	#container {
+	width: 600px;
+	height: 460px;
+}
+  .reg {
+  
+    width: 600px;
+    float:none;
+}
+
+
+
+}
+
+@media only screen and (max-width: 600px) {
+	#container {
+	width: 350px;
+	height: 570px;
+}
+ .reg {
+  
+    width: 350px;
+    float:none;
+}
+#uname {
+    width: 273px;
+}
+
+#email {
+    width: 273px;
+}
+
+#passwd {
+    width: 273px;
+}
+
+input.cpass {
+	margin-left: 22px;
+}
+
+
+}

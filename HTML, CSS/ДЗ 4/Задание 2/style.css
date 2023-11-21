@@ -1,0 +1,56 @@
+body {
+	display: flex;
+}
+
+#menu {
+	display: block;
+	position: fixed;
+	float:left;
+	height: 500px;
+	width: 70px;
+	background-color: #696969;
+	color: white;
+	transition-property: width;
+	transition-duration: .1s;
+	transition-timing-function: linear;
+	overflow: hidden;
+
+
+}
+
+.block {
+	display: block;
+	height: 50px;
+	width: 200px;
+	text-align: center;
+	vertical-align: middle;
+	padding-top: 10px;
+}
+
+#text {
+	font-family: Tahoma, Geneva, sans-serif;
+	display: block;
+	float: right;
+	padding-left: 100px;
+	background-color: #FDF5E6;
+	height: 500px;
+	overflow: auto;
+}
+
+img {
+	height: 50px;
+	width: 50px;  
+	display: block;     
+	float: left ;
+}
+#m {
+	padding-left: 10px;
+}
+
+#menu:hover {
+	width: 200px;
+}
+
+.block:hover {
+	background-color: 	#4F4F4F;
+}

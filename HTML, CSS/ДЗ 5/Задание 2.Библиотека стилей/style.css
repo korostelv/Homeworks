@@ -1,0 +1,279 @@
+
+#entertext {
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	height: 20px;
+	width: 120px;
+	color: #ccc;
+}
+
+#validtext {
+	border: 1px solid #1AAC50;
+	border-radius: 3px;
+	height: 20px;
+	width: 120px;
+
+}
+
+#invalidtext {
+	border: 1px solid #C80C0C;
+	border-radius: 3px;
+	height: 20px;
+	width: 120px;
+	background: url(icons/invalid.png)  no-repeat;
+	background-size: 16px;
+	background-position-x: right;
+	background-position-y:center ;
+	color:#C80C0C;
+}
+
+/**************************************************************************/
+
+
+
+
+ input.on {
+ 	appearance: none;
+  	height: 16px;
+  	width: 32px;
+  	border-radius: 5px;
+  	box-shadow: inset -16px 0px 0px 0px white;
+  	background-color: green;
+  	border: 1px solid green;
+  	margin-bottom:-1px;
+ }
+
+ input.off {
+ 	appearance: none;
+ 	height: 16px;
+  	width: 32px;
+  	border-radius: 5px;
+ 	box-shadow: inset 16px 0px 0px 0px white;
+ 	background-color: red;
+ 	border: 1px solid red;
+ 	margin-bottom:-1px;
+ }
+
+
+
+/*
+ input.on {
+ 	appearance: none;
+  	height: 16px;
+  	width: 32px;
+  	border-radius: 5px;
+  	box-shadow: inset -16px 0px 0px 0px white;
+  	background-color: green;
+  	border: 1px solid green;
+  	margin-bottom:-1px;
+ }
+
+ input.on:checked {
+ 	appearance: none;
+ 	height: 16px;
+  	width: 32px;
+  	border-radius: 5px;
+ 	box-shadow: inset 16px 0px 0px 0px white;
+ 	background-color: red;
+ 	border: 1px solid red;
+ 	margin-bottom:-1px;
+ }
+
+
+ input.off {
+ 	appearance: none;
+  	height: 16px;
+  	width: 32px;
+  	border-radius: 5px;
+  	box-shadow: inset -16px 0px 0px 0px white;
+  	background-color: green;
+  	border: 1px solid green;
+  	margin-bottom:-1px;
+ }
+
+ input.off:checked {
+ 	appearance: none;
+ 	height: 16px;
+  	width: 32px;
+  	border-radius: 5px;
+ 	box-shadow: inset 16px 0px 0px 0px white;
+ 	background-color: red;
+ 	border: 1px solid red;
+ 	margin-bottom:-1px;
+ }
+*/
+
+/***********************************************************************/
+
+input.male {
+	position: relative;
+ 	height: 16px;
+ 	width: 16px;
+ 	appearance: none;
+}
+
+
+input.male::before {
+	 content: '';
+	 position: absolute;
+	 top: 50%;
+	 left: 50%;
+	 width: 16px;
+	 height: 16px;
+	 border-radius: 50%;
+	 transform: translate(-50%, -50%);
+	 background-color: white;
+	 border: 2px solid green;
+}
+
+input.male::after {
+	 content: '';
+	 position: absolute;
+	 top: 50%;
+	 left: 50%;
+	 width: 14px;
+	 height: 14px;
+	 border-radius: 50%;
+	 background-color: green;
+	 transform: translate(-50%, -50%);
+}
+
+
+input.female {
+	position: relative;
+ 	height: 16px;
+ 	width: 16px;
+ 	appearance: none;
+}
+
+
+input.female::before {
+	 content: '';
+	 position: absolute;
+	 top: 50%;
+	 left: 50%;
+	 width: 16px;
+	 height: 16px;
+	 border-radius: 50%;
+	 transform: translate(-50%, -50%);
+	 background-color: white;
+	 border: 2px solid green;
+}	 
+
+/*
+input[type='radio'] {
+	position: relative;
+ 	height: 16px;
+ 	width: 16px;
+ 	appearance: none;
+}
+
+input[type='radio']::before {
+	 content: '';
+	 position: absolute;
+	 top: 50%;
+	 left: 50%;
+	 width: 16px;
+	 height: 16px;
+	 border-radius: 50%;
+	 transform: translate(-50%, -50%);
+	 background-color: white;
+	 border: 2px solid green;
+}
+
+input[type='radio']:checked::after {
+	 content: '';
+	 position: absolute;
+	 top: 50%;
+	 left: 50%;
+	 width: 14px;
+	 height: 14px;
+	 border-radius: 50%;
+	 background-color: green;
+	 transform: translate(-50%, -50%);
+}
+*/
+/**************************************************************/
+
+input.active {
+	width: 96px;
+	height: 32px;
+	border: none;
+	border-radius: 5px;
+	color: white;
+	background-color: green;	
+}
+
+input.hover {
+	width: 96px;
+	height: 32px;
+	border: none;
+	border-radius: 5px;
+	color: white;
+	background-color: #07570B;
+}
+
+input.danger {
+	width: 96px;
+	height: 32px;
+	border: none;
+	border-radius: 5px;
+	color: white;
+	background-color: red;
+}
+
+input.hover-d {
+	width: 96px;
+	height: 32px;
+	border: none;
+	border-radius: 5px;
+	color: white;
+	background-color: #AD1D4F;
+}
+
+input.disabled {
+	width: 96px;
+	height: 32px;
+	border: none;
+	border-radius: 5px;
+	color: white;
+	background-color: #948C8C;
+}
+/*
+input.disabled:hover:active {
+	width: 96px;
+	height: 32px;
+	border: none;
+	border-radius: 5px;
+	color: white;
+	background-color: green;
+}
+
+input.disabled:hover {
+	width: 96px;
+	height: 32px;
+	border: none;
+	border-radius: 5px;
+	color: white;
+	background-color: #07570B;
+}
+*/
+
+input.plus {
+	border-radius: 50%;
+	background-color: green;
+	border: none;
+	color: white;
+	width: 32px;
+	height: 32px;
+}
+
+input.minus {
+	border-radius: 50%;
+	background-color: red;
+	border: none;
+	color: white;
+	width: 32px;
+	height: 32px;
+}
+

@@ -1,0 +1,31 @@
+*{
+	font-family : Verdana ,Geneva, sans-serif;
+}
+
+p {
+	font-weight: bold;
+	text-align: center;
+}
+h3 {
+	text-align: center;
+}
+
+#eda {
+	display: flex;
+	text-align: center;
+	position: ;	
+	flex-wrap: wrap;
+}
+
+.block {
+	border: 2px solid #ddd;
+	border-radius: 10%;
+	margin: 5px;
+	position: static;
+}
+
+img {
+	padding:10px;
+}
+
+

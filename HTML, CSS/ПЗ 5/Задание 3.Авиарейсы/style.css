@@ -1,0 +1,157 @@
+*, *::before, *, *::after {
+    box-sizing: border-box;
+    font-family:Verdana,Geneva,sant-serif;
+ }
+.conteiner {
+	width: 1200px;
+	margin: 0 auto;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+body {
+	background-color: #E8E8E8;
+}
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 30px;
+	padding: 0 80px;
+	width: auto;
+	height: 100px;
+	background-color: #00008B;
+	color: white;
+}
+
+.menu {
+	width: 1200px;
+	height: 80px;
+	display: flex;
+	justify-content: space-between;
+	margin: 0 auto;
+}
+
+.m {
+	display: flex;
+	width: 1200px;
+	justify-content: space-between;
+	margin-top: 20px;
+}
+
+input[type=text], select, input[type=submit] {
+	width: 185px;
+	height: 30px;
+	border-radius: 5px;
+}
+
+input[type=submit] {
+	color: white;
+	background-color: #00008B;
+	border: none;
+}
+.geo {
+	background-image: url(icons/location.svg);
+	background-repeat: no-repeat;
+	background-size: 25px;
+	background-position-x: right;
+	background-position-y:center ;
+}
+
+.cal {
+	background-image: url(icons/calendar.svg);
+	background-repeat: no-repeat;
+	background-size: 25px;
+	background-position-x: right;
+	background-position-y:center ;
+}
+
+.basic {
+	width: 1200px;
+	margin: 20px auto 0;
+}
+/************************************************/
+.filter {
+	display: block;
+	float:left;
+	width: 300px;
+	padding-bottom: 20px;
+	padding-left: 20px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	background-color: white;
+}
+/*********************************************/
+table {
+	display: block;
+	float: right;
+	background-color: white;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	border-collapse: collapse;
+	padding-bottom: 20px;
+}
+
+#min, #max {
+	width: 85px;
+}
+
+h3 {
+	color: #00008B;
+}
+
+.st {
+	color:#00008B;
+	font-weight: bold;
+}
+
+
+caption {
+	text-align: center;
+	height: 80px;
+	font-weight: bolder;
+	font-size: 24px;
+	padding-top: 20px;
+}
+
+th {
+	color: #00008B;
+	width: 145px;
+	height: 60px;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	background-color: #E8E8E8;
+}
+
+td {
+	width: 120px;
+	height: 60px;
+	text-align: center;
+	border-bottom: 1px solid #ccc;
+}
+
+tr {
+	border: 1px solix #ccc;
+}
+
+a {
+	display: block;
+	width: 90px;
+	height: 30px;
+	color:white;
+	text-decoration: none;
+	background-color:#00008B;
+	padding-top: 10px;
+	border-radius: 5px;
+	margin: 0 auto;
+
+}
+
+td:last-child {
+	color:#00008B;
+	line-height: 10px;
+}
+
+td:nth-child(5) {
+	font-weight: bold;
+}

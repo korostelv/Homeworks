@@ -5,7 +5,7 @@ import threading
 
 
 def weather(city):
-    API_KEY = '04b61c250623ebba8e31feb298cbda1d'
+    API_KEY = ''
     open_weather = f"https://api.openweathermap.org/data/2.5/forecast?q={city}&appid={API_KEY}&units=metric&lang=ru&"
     data = requests.get(open_weather).json()
     list = []

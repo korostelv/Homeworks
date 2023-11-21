@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Document</title>
+
+    <style>
+        #base{
+            height: 530px;
+            width: 1200px;
+            margin: auto;
+            display: flex;
+            flex-direction: row;
+            background-color: bisque;
+        }
+        #choice {
+            display: inline-block;
+            width: 400px;
+            height: 460px;
+            margin: 10px;
+            border: 1px solid #c0c0c0;
+            padding: 20px;
+        }
+        #shop {
+            width: 800px;
+            height: 1000px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            
+        }
+        .book {
+            width: 250px;
+            height: 500px;
+            border: 1px solid #c0c0c0;
+            margin-top: 10px;
+            margin-left: 10px;
+     
+        }
+        img{
+            height: 300px;
+            width: 200px;
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+        .name,.autor,.price {
+            text-align: right;
+            margin-right: 30px;
+        }
+        button{
+            width: 200px;
+            height: 30px;
+            margin-left: 25px;
+        }
+        input {
+            float:right;
+            width: 180px;
+        }
+        textarea{
+            float: right;
+            width: 180px;
+            height: 100px;
+        }
+        #dd{
+            float: left;
+            display: inline-block;
+            margin-top: 85px;
+            width: 130px;
+            height: 20px;
+
+        }
+        #com{
+            display: inline-block;
+            width: 130px;
+            height: 20px;
+            float: left;
+            margin-top: 20px;
+        }
+        #date {
+            margin-top: 15px;
+        }
+        #comment {
+            margin-top: 15px;
+            height: 120px;
+        }
+        #buy {
+            height: 30px;
+            width: 360px;
+            margin-top: 20px;
+        }
+        .res {
+            width: auto;
+            height: auto;
+            border: 1px solid #c0c0c0;
+            margin-top: 10px;
+            margin-left: 80px;
+            padding: 5px;
+            background-color: bisque;
+
+        }
+
+    </style>
+
+</head>
+<body>
+    <div id="base">
+        <div id="shop">
+            <div class="book">
+                <img src="books/elizarov.webp" alt="elizarov">
+                <p class="name">Библиотекарь</p>
+                <p class="autor">М.Елизаров</p>
+                <p class="price">600</p>
+                <button>select</button>
+            </div>
+
+            <div class="book">
+                <img src="books/akunin.webp" alt="akunin">
+                <p class="name">Собачья смерть</p>
+                <p class="autor">Б.Акунин</p>
+                <p class="price">800</p>
+                <button>select</button>
+            </div>
+
+            <div class="book">
+                <img src="books/stargardt.webp" alt="stargardt">
+                <p class="name">Мобилизованная нация</p>
+                <p class="autor">Н.Старгардт</p>
+                <p class="price">550</p>
+                <button>select</button>
+            </div>
+        </div>
+
+        <div id="choice">
+            <form action="" method="GET">
+                Book: <input type="book" name="book" id="book"><br><br>
+                Quantity: <input type="number" id="quant"><br><br>
+                Name: <input type="text" name="name" id="name"><br><br>
+                Delivery address: <textarea name="addr" id="addr"></textarea><br><br>
+                <span id="dd">Delivery date:</span>  <input type="date" id="date"><br><br>
+                <span id="com">Comment:</span> <textarea name="comment" id="comment" ></textarea><br><br>
+                <input type="button" value="Buy" id="buy">
+            </form>
+        </div>
+    </div>
+
+
+    <script>
+        var shop = document.querySelector('#shop');
+        var order_book = document.forms[0][0];
+        var quant = document.forms[0][1];
+        var customer_name = document.forms[0][2];
+        var addr = document.forms[0][3];
+        var date = document.forms[0][4];
+        var comment = document.forms[0][5];
+        var buy = document.forms[0][6];
+
+        for(var i of shop.children){  
+            var select = i.children[4];
+            select.addEventListener('click',chooseBook);
+        }
+
+        function chooseBook(e) {
+            var select = e.target;
+            var name_book = select.parentNode.querySelector('.name');
+            var autor_book = select.parentNode.querySelector('.autor');
+            var price_book = select.parentNode.querySelector('.price');
+            var book = name_book.textContent + ' ' + autor_book.textContent;
+            console.log(book);
+            order_book.value = book;   
+            
+            buy.addEventListener('click', toBuyBook);
+        }
+        var prevdiv;
+        function toBuyBook() {
+            if(prevdiv){
+                    prevdiv.remove();
+                }
+            res = document.createElement('DIV');
+            res.className = 'res';
+            res.innerHTML = '<b>Result:</b><br> '+customer_name.value+', thank for the order!<br>Book "'+order_book.value+'" will be delivered on '+date.value+' to '+addr.value;
+            document.body.append(res);
+            prevdiv = res
+
+        }
+
+    </script>
+
+
+
+</body>
+</html>

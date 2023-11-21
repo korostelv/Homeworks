@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        body {
+            width: 600px;
+            margin: auto;
+            height: auto;
+            background-color: #fbf2e9;
+        }
+
+        textarea {
+            width: 100%;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+        button {
+            width: 100%;
+            margin-left: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="article">
+        <h3> Lorem ipsum</h3>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Gravida neque convallis a cras semper auctor neque vitae. Justo donec enim diam vulputate ut pharetra. At tempor commodo ullamcorper a lacus vestibulum sed arcu.
+        </p>
+    </div>
+    <hr>
+    <div id="comm">
+        <div class="new_comm">
+        </div>
+    </div>
+
+    <div id="write_comm">
+        <h4>Leave your comment</h4>
+        Name: <input type="text">
+        <p>Comment:</p>
+        <textarea name="write_comm" id=""></textarea><br>
+        <button>Add comment</button>
+    </div>
+
+    <script>
+        var btn = document.querySelector('button');
+        var write_name = document.querySelector('input');
+        var text = document.querySelector('textarea');
+        var comm = document.querySelector('#comm');
+        data = new Date();
+        d = ('0'+this.data.getDate()).slice(-2)+'.'+('0'+(this.data.getMonth()+1)).slice(-2)+'.'+this.data.getFullYear();
+
+        str = '';
+        btn.addEventListener('click',print_comm);
+
+        function print_comm() {
+            str = str+'<b>'+ write_name.value+'</b>'+'<br>'+d+'<br>'+text.value+'<hr>';
+            new_comm = document.createElement('DIV');
+            new_comm.className = 'comm';
+            new_comm.innerHTML = str;
+            comm.append(new_comm);
+            text.value = '';
+            write_name.value = '';
+            str = '';
+        }
+
+
+
+    </script>
+</body>
+</html>

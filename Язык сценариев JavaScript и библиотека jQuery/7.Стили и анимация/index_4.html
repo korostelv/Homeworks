@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <style>
+        #container {
+            width: 300px;
+            height: auto;
+        }
+        h3 {
+            text-align: center;
+        }
+        .stripe {
+            display: block;
+            float: left;
+            width: 250px;
+            height: 10px;
+            background-color: #c0c0c0;
+            margin: 5px 10px;
+        }
+        .box {
+            width: 280px;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            
+        }
+        .graf {
+            height: 10px;
+            display: block;
+            z-index: 1;
+        }
+</style>
+</head>
+<body>
+
+    <div id ='container'></div>
+    <script>
+        
+        arr = {
+            "header": "User rating",
+            "maxvalue": 254,
+            "data": [
+            {
+            "title": "5 stars",
+            "value": 150
+            },
+            {
+            "title": "4 stars",
+            "value": 63
+            },
+            {
+            "title": "3 stars",
+            "value": 15
+            },
+            {
+            "title": "2 stars",
+            "value": 6
+            },
+            {
+            "title": "1 star",
+            "value": 20
+            }
+            ]}
+            
+            console.log(arr.data)
+            cont = $('#container')
+            cont.append("<h3>"+arr.header+"<h3>")
+
+           for  (var i=0;i<arr.data.length;i++){
+                var color =  "rgb(" + Math.round(255*Math.random()) + "," + Math.round(255*Math.random()) + "," + Math.round(255*Math.random()) + ")";
+                var box = $('<div></div>');
+                cont.addClass('box');
+                cont.append(box);
+
+                var stripe = $('<div></div>');
+                stripe.addClass('stripe');
+                box.append(stripe);
+
+                box.append(arr.data[i].value)
+
+                var graf = $('<div></div>');
+                graf.addClass('graf');
+                var w = stripe.width() * arr.data[i].value / arr.maxvalue;
+                graf.width(w)
+                graf.css('background-color', color)
+                stripe.append(graf);
+
+               
+
+        }
+
+    </script>
+</body>
+</html>

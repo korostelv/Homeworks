@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        body {
+            margin-top: 50px;
+            margin-left: 50px;
+        }
+        #month {
+            width: 30px;
+            text-align: center;
+        }
+        #year{
+            width: 60px;
+            text-align: center;
+        }
+        button {
+            margin-top: 20px;
+            width: 220px;
+        }
+        table {
+            border-collapse: collapse;
+            text-align: center;
+            display: none;
+        }
+        th,td {
+            border: 1px solid #c0c0c0;
+        }
+
+    </style>
+</head>
+<body>
+    Month: <input type="text" id="month">  Year: <input type="text" id="year"><br>
+    <button>Generate</button>
+    <p id="date"></p>
+
+    <table>
+        <tr>
+            <th>MON</th>
+            <th>TUE</th>
+            <th>WED</th>
+            <th>THU</th>
+            <th>FRI</th>
+            <th>SUT</th>
+            <th>SUN</th>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+    </table>
+
+
+
+    <script>
+        let month = document.querySelector('#month');
+        let year = document.querySelector('#year');
+        let date = document.querySelector('#date');
+        let btn = document.querySelector('button');
+        btn.onclick = function() {
+        let m;
+        switch( month.value){
+            case '1':
+                m = 'Yanuary';
+                break;
+            case '2':
+                m = 'February';
+                break;
+            case '3':
+                m = 'March';
+                break;
+            case '4':
+                m = 'April';
+                break;
+            case '5':
+                m = 'May';
+                break;
+            case '6':
+                m = 'June';
+                break;
+            case '7':
+                m = 'July';
+                break;
+            case '8':
+                m = 'August';
+                break;
+            case '9':
+                m = 'September';
+                break;
+            case '10':
+                m = 'October';
+                break;
+            case '11':
+                m = 'November';
+                break;
+            case '12':
+                m = 'December';
+                break;     
+        }
+        date.innerHTML = m+', '+year.value;
+        
+       
+
+        let d = new Date(year.value+'-'+('0'+month.value).slice(-2)+'-'+'01');
+     
+        let table = document.querySelector('table');
+        let rows= table.rows; 
+ 
+        switch(d.getDay()) {
+            case 0:
+                rows[1].cells[6].innerHTML = 1;
+                break;
+            case 1:
+                rows[1].cells[0].innerHTML = 1;
+                break;
+            case 2:
+                rows[1].cells[1].innerHTML = 1;
+                break;
+            case 3:
+                rows[1].cells[2].innerHTML = 1;
+                break;
+            case 4:
+                rows[1].cells[3].innerHTML = 1;
+                break;
+            case 5:
+                rows[1].cells[4].innerHTML = 1;
+                break;
+            case 6:
+                rows[1].cells[5].innerHTML = 1;
+                break;
+        }
+
+        var lastDay = (new Date(year.value, month.value, 0)).getDate();
+
+
+
+        var rowCount = table.rows.length;
+        var colCount = table.rows[0].cells.length;
+        var dayCount = -1;
+        for (var i = 0; i < rowCount; i++) {
+            for (var j = 0; j < colCount; j++) {
+                var cell = table.rows[i].cells[j];      
+                
+ 
+
+                if (cell.innerHTML  == 1){
+                    dayCount++;
+                }
+                if (dayCount>=0){
+                    dayCount++;
+                    cell.innerHTML = dayCount;
+                    
+                }
+                if (cell.innerHTML > lastDay){
+                    cell.innerHTML = '';
+                }
+            console.log(cell)   
+                
+            }
+        }  
+        table.style.display = 'block';  
+        // month.value = '';
+        // year.value = '';
+    }
+
+    </script>
+
+</body>
+</html>

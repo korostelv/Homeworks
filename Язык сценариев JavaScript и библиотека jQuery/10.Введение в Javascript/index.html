@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+// 1
+
+// function MinNumb(a,b) {
+//     if (a<b) {alert(a);}
+//     else {alert(b);}
+// }
+
+// MinNumb(3,6)
+
+// 2
+// function Step(value,st){
+//     alert(value**st)
+// }
+// Step(2,3);
+
+// 3
+// function calc() {
+//         a = +prompt('Введите первое число')
+//         b = +prompt('Введите второе число')
+//         value = prompt('Введите математический символ')
+//         switch(value) {
+//             case '+':
+//                 alert(a+' + '+b+' = '+(a+b));
+//                 break;
+//             case '-':
+//                 alert(a+' - '+b+' = '+(a-b));
+//                 break;
+//             case '*':
+//                 alert(a+' * '+b+' = '+(a*b));
+//                 break;
+//             case '/':
+//                 alert(a+' / '+b+' = '+(a/b));
+//                 break;     
+//         }
+// }
+
+// calc();
+
+//4
+// function prost(value) {
+//     j = 0
+//     for(i=1;i<=value;i++){
+//         if (i != 1 && i != value && value%i ==0) {
+//            j++
+//            console.log(j)
+//         }     
+//     }
+//     if (j == 0) {
+//         alert(value+' -Число простое')
+//     }
+//     else{
+//         alert(value+' -Число не простое')
+//     }
+// }
+
+// prost(10);
+
+//5
+
+// function table(a) {
+//     for (i=2;i<=9;i++) {
+//         document.write(i+' * '+a+' = '+i*a+'<br>')
+//     }
+// }
+
+// table(9)
+
+// 6
+//  function ostatok(a,b) {
+
+//     alert('Остаток '+(a-(Math.floor(a/b))*b))
+//  }
+
+// ostatok(8,3)
+
+//7
+// function summ(){
+//     str = prompt('Введите числа через пробел. Функция считает лишь сумму не более пяти первых чисел')
+//     var arr = str.split(' ')
+//     sum = 0;
+//     count = 0
+//     for( var i in arr){
+//         sum= sum + Number(arr[i])
+//         count++
+//         if (count == 5)
+//             break;
+//     }
+//     alert('Сумма чисел: '+sum)
+//     }
+    
+// summ()
+
+
+//8
+
+// function MinNumb() {
+//     str = prompt('Введите числа через пробел. Функция считает лишь сумму не более пяти первых чисел')
+//     var arr = str.split(' ')
+//     var arr2 =[];
+//     count = 0
+//     for (var i in arr){
+//         arr2[i] = Number(arr[i])
+//         count++;
+//         if(count == 5)
+//             break;
+//     }
+
+//     function func(a,b) {
+//     if(a>b)
+//         return 1
+//     else if (b>a)
+//         return -1;
+//     else
+//         return 0;
+//     }
+//     alert('Минимальное число: '+(arr2.sort(func)[0]));
+
+// }
+
+// MinNumb()
+
+//9
+// function ChetNechet(min,max,bool) {
+//     chet = '';
+//     nechet = '';
+//     for(i =min;i <max;i++) {
+//         if (i%2 == 0) {
+//             chet = chet+(i+' ');           
+//         }
+//         else {
+//             nechet = nechet+(i+' ')            
+//         }
+//     }
+//     if (bool){
+//         alert('Четные числа: '+chet);
+//     }
+//     else {
+//         alert('Нечетные числа: '+nechet);
+//     }
+     
+// }
+
+
+// ChetNechet(1,10,false)
+
+
+// 10
+
+function CheckLeapYear(year) {
+    if(year%400 == 0 || (year%4 == 0 && year%100 != 0)) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+
+
+function NextDay(day,month,year) {
+
+next_day = day+1;
+next_month = month+1;
+next_year = year+1;
+long_m = [1,3,5,7,8,10];
+short_m = [4,6,9,11];
+
+if (long_m.includes(month)) {
+    if (day>=1 && day< 31) {
+        alert('Следующий день: '+next_day+'.'+month+'.'+year)
+    }
+    else if (day == 31) {
+        alert('Следующий день: 01.'+next_month+'.'+year)
+    }
+    else {
+        alert('Введенный день некорректен')
+    }
+}
+else if (short_m.includes(month) ){
+    if (day>=1 && day< 30) {
+        alert('Следующий день: '+next_day+'.'+month+'.'+year)
+    }
+    else if (day == 30) {
+        alert('Следующий день: 01.'+next_month+'.'+year)
+    }
+    else {
+        alert('Введенный день некорректен')
+    }
+}
+else if (month === 12){
+    if (day>=1 && day< 31) {
+        alert('Следующий день: '+next_day+'.'+month+'.'+year)
+    }
+    else if (day == 31) {
+        alert('Следующий день: 01.01.'+next_year)
+    }
+    else {
+        alert('Введенный день некорректен')
+    }
+}
+else if (month === 2){
+    if (day>=1 && day< 28) {
+        alert('Следующий день: '+next_day+'.'+month+'.'+year)
+    }
+    else if (day == 28 && CheckLeapYear(year) === false) {
+        alert('Следующий день: 01.'+next_month+'.'+year)
+    }
+    else if (day == 28 && CheckLeapYear(year) === true) {
+        alert('Следующий день: '+next_day+'.'+month+'.'+year)
+    }
+    else if (day == 29 && CheckLeapYear(year) === true) {
+        alert('Следующий день: 01.'+next_month+'.'+year)
+    }
+    else if((day > 28 && CheckLeapYear(year) === false)||(day>29 && CheckLeapYear(year) === true)){
+        alert('Введенный день некорректен')
+    }
+}
+else {
+    alert('Введенный месяц некорректен')
+}
+}
+
+NextDay(29,2,2000)
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

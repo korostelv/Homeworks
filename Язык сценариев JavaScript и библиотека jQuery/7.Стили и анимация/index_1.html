@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <style>
+        #container {
+            width: 600px;
+            height: 300px;
+            position: relative;
+        }
+        
+        ul {
+            list-style-type: none;
+            
+        }
+        
+        li.hat{
+            display: block;
+            float: left;
+            list-style-type: none;
+            justify-content: space-between;
+            width: 90px;
+            height: 30px;
+            background-color: #009595;
+            text-align: center;
+            padding-top: 5px;
+            color: white;
+        }
+
+        li.open-hat{
+            display: block;
+            float: left;
+            list-style-type: none;
+            justify-content: space-between;
+            width: 90px;
+            height: 30px;
+            background-color:#037373 ;
+            text-align: center;
+            padding-top: 5px;
+            color: white;
+        }
+
+        .text {
+            display: none;
+        }
+        .open-text {
+            width: 525px;
+            height: 200px;
+            border: 2px solid #037373;
+            margin-right: 20px;
+            color: black;
+            position: absolute;
+            top: 32px;
+            left:40px;
+            padding: 5px;
+            overflow: auto;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <ul>
+            <li class="hat">Mango
+                <ul>
+                    <li class = 'open-text'>A mango is an edible stone fruit produced by the tropical tree Mangifera indica. It is believed to have originated in southern Asia, particularly in eastern India, Bangladesh, and the Andaman Islands.[1] M. indica has been cultivated in South and Southeast Asia since ancient times resulting in two types of modern mango cultivars: the "Indian type" and the "Southeast Asian type".[2][3] Other species in the genus Mangifera also produce edible fruits that are also called "mangoes", the majority of which are found in the Malesian ecoregion.</li>
+                </ul>
+            </li>
+            <li class="hat" >Orange
+                <ul>
+                    <li class="text">Aated in South and Southeast Asia since ancient times resulting in two types of modern mango cultivars: the "Indian type" and the "Southeast Asian type".[2][3] Other species in the genus Mangifera also produce edible fruits that are also called "mangoes", the majority of which are found in the Malesian ecoregion.
+                </ul>
+                </li>
+            </li>
+            <li class="hat">Pineapple
+                <ul>
+                    <li class="text">
+                        The pineapple is indigenous to South America, where it has been cultivated for many centuries. The introduction of the pineapple to Europe in the 17th century made it a significant cultural icon of luxury. Since the 1820s, pineapple has been commercially grown in greenhouses and many tropical plantations.
+                    </li>
+                </ul>
+                </li>
+            </li>
+            <li class="hat" >Papaya
+                <ul>
+                    <li class="text">
+                        The papaya (/pəˈpaɪə/, US: /pəˈpɑːjə/), papaw, (/pəˈpɔː/[3]) or pawpaw (/ˈpɔːpɔː/[3])[4] is the plant species Carica papaya, one of the 21 accepted species in the genus Carica of the family Caricaceae.[5] It was first domesticated in Mesoamerica, within modern-day southern Mexico and Central America.[6][7] It is grown in several countries in regions with a tropical climate. In 2020, India produced 42% of the world's supply of papayas.
+                    </li>
+                </ul>
+            </li>
+            <li class="hat" >Grapefruit
+                <ul>
+                    <li class="text">
+                       [5] It was first domesticated in Mesoamerica, within modern-day southern Mexico and Central America.[6][7] It is grown in several countries in regions with a tropical climate. In 2020, India produced 42% of the world's supply of papayas.
+                    </li>
+                </ul>
+            </li>
+            <li  class="hat">Pear
+                <ul>
+                    <li class="text">
+                        Pears are fruits produced and consumed around the world, growing on a tree and harvested in late summer into mid-autumn. The pear tree and shrub are a species of genus Pyrus /ˈpaɪrəs/, in the family Rosaceae, bearing the pomaceous fruit of the same name. Several species of pears are valued for their edible fruit and juices, while others are cultivated as trees. 
+                    </li>
+                </ul>
+            </li>
+        </ul>
+      
+    </div>
+
+<script>
+    fruits = $('ul > li');
+    var mark;
+
+    function openMango() {
+        var mangoItem = $("ul > li").first();
+        // mangoItem.children().children().addClass('open-text');
+        mangoItem.addClass('open-hat');
+        mark = mangoItem.children().children();
+    }
+
+    fruits.each(function() {
+        $(this).click(function(e) {
+            if (mark && mark[0] !== $(this).children().children()[0]) {
+                mark.removeClass('open-text').addClass('text').parent().parent().removeClass('open-hat').addClass('hat');
+            }
+            $('.text:first()').removeClass('open-text').addClass('text');
+            mark = $(this).children().children();
+            mark.removeClass('text').addClass('open-text').parent().parent().removeClass('hat').addClass('open-hat');
+        });
+    });
+
+    openMango();
+
+</script>
+
+    
+</body>
+</html>
+

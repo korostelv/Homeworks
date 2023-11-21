@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+#base {
+        width: 400px;
+        height: auto;
+        background-color: #fdeedf;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    #palette {
+        width: 200px;
+        height: 40px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+    p {  
+        width: auto;
+        height: auto;
+        padding-left: 10px;
+    }
+    .block {
+        width: 20px;
+        height: 20px;
+        border: 1px solid #c0c0c0;
+    }
+    </style>
+</head>
+<body>
+    <div id="base">
+        <div id="palette"></div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Gravida neque convallis a cras semper auctor neque vitae. Justo donec enim diam vulputate ut pharetra. At tempor commodo ullamcorper a lacus vestibulum sed arcu. </p>
+    </div>
+
+    <script>
+        var palette = document.querySelector('#palette')
+        block = document.querySelector('.block')
+        text = document.querySelector('p')
+
+        arr_color = ['#000000','#8a8a8a','#92001c','#ef242d','#ffff00','#2bb857','#00aaea','#4a53d1','#ab54ac','#ffffff','#d7d7d7','#c08462','#ffc6d0','#f1e7b7','#bce925','#a2ddec','#7b9bc4','#cdc5ea']
+
+        for (var i=0;i<18;i++) {
+            block=i
+            block = document.createElement('div');        
+            block.className = 'block';
+            palette.append(block)
+        }
+
+        for (var i in palette.children) {
+            for(j in arr_color) {
+                if(j == i){
+                    palette.children[i].style.backgroundColor = arr_color[j]
+                }
+            }
+        }
+
+        for (var i of palette.children) {
+            i.onclick = function() {
+                c = this.style.backgroundColor;
+                text.style.color = c;
+
+            }
+        }
+    </script>
+</body>
+</html>

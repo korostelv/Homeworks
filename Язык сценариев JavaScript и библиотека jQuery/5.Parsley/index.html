@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<head>
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="parsley.js"></script>
+    <link rel="stylesheet" href="parsley.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
+</head>
+<body>
+
+    <form id="register-form" data-parsley-validate="">
+
+        <h4>Register form</h4>
+
+        <label for="username">Username: </label>
+        <input type="text" id="username" class="form-control" name="username" data-parsley-trigger="change" data-parsley-minlen="4" data-parsley-maxlen="20" data-parsley-allow="" data-parsley-req="Username" required >
+        <br><br>
+        <label for="email">Email: </label>
+        <input type="email" id="email" class="form-control" name="email" data-parsley-trigger="change" data-parsley-req="Email"  required="">
+        <br><br>
+        <label for="password">Password: </label> 
+        <input type="password" id="password" class="form-control" name="password" data-parsley-trigger="change" data-parsley-minlen="6" data-parsley-maxlen="30"  data-parsley-req="Password" required="">
+        <br><br>
+        <label for="repeat">Repeat: </label> 
+        <input type="password" id="repeat" class="form-control" name="repeat" data-parsley-trigger="change" data-parsley-equalto="#register-form input[name=password]" required="">
+        <br><br>
+        <input type="submit" id="submit" class="btn btn-default" value="Register">
+    </form>
+
+    <table id="result">
+        <caption>Result</caption>
+        <tr>
+            <td class="one">Username</td>
+            <td class="two"></td>
+        </tr>
+        <tr>
+            <td class="one">Email</td>
+            <td class="two"></td>
+        </tr>
+        <tr>
+            <td class="one">Password</td>
+            <td class=" two"></td>
+        </tr>
+    </table>
+
+  
+
+
+    <form id="user-info" data-parsley-validate="">
+
+        <h4>User info</h4>
+    
+        <label for="full-name">Full name: </label>
+        <input type="text" id="full-name" class="form-control" name="full-name" data-parsley-trigger="change" data-parsley-minlen="2" data-parsley-maxlen="50" required="">
+        <br><br>
+        <label for="avatar">Avatar: </label>
+        <input type="file" id="avatar" class="form-control" name="avatar" data-parsley-req="Avatar" data-parsley-filerequired="">
+        <br><br>
+        <label for="birthday">Birthday: </label>
+        <input type="date" id="birthday" class="form-control" name="birthday" data-parsley-req="Birthday" data-parsley-birthday-min="1900-01-01" required="">
+        <br><br>
+        <label for="gender">Gender: </label><br>
+        <input type="radio" id="gender-male" class="form-control" name="gender" value="Male" data-parsley-req="Gender" required=""> Male
+        <input type="radio" id="gender-female" class="form-control" name="gender" value="Female"> Female
+        <br><br>
+        <label for="subscribe">Subscribe:</label>
+        <input type="checkbox" name="subscribe" id="subscribe">
+        <br><br>
+        <input type="button" id="save" class="btn btn-default" value="Save">
+    
+    </form>
+    
+    <table id="result-info">
+        <caption>Result</caption>
+        <tr>
+            <td class="one-info">Full name</td>
+            <td class="two-info"></td>
+        </tr>
+        <tr>
+            <td class="one-info">Avatar</td>
+            <td class="two-info"></td>
+        </tr>
+        <tr>
+            <td class="one-info">Birthday</td>
+            <td class="two-info"></td>
+        </tr>
+        <tr>
+            <td class="one-info">Gender</td>
+            <td class="two-info"></td>
+        </tr>
+        <tr>
+            <td class="one-info">Subscribe</td>
+            <td class="two-info"></td>
+        </tr>
+    </table>
+
+
+</body>
+</html>
+

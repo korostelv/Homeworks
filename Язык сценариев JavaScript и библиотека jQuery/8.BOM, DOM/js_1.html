@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #base {
+            width: 120px;
+            height: 80px;
+            background-color: #fdeedf;
+            border: 1px solid #8a8a8a;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            text-align: center;
+            font-size: 60px;
+        }
+        #numb {
+            width: 80px;
+            height: 80px;
+            padding-top: 5px;
+            overflow-x: auto;
+        }
+        #keys {
+            width: 40px;
+            height: 80px;
+            border-left: 1px solid #8a8a8a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #up {
+            width: 40px;
+            height: 40px;
+            border-bottom: 1px solid #8a8a8a;
+            position: relative;
+
+        }
+        #up_arrow {
+            width: 20px;
+            height: 20px;
+            border-top: 5px solid #2b2b2b;
+            border-left: 5px solid #2b2b2b;           
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            
+        }
+
+        #down {
+            width: 40px;
+            height: 40px;
+            position: relative;
+
+        }
+        #down_arrow {
+            width: 20px;
+            height: 20px;
+            border-top: 5px solid #2b2b2b;
+            border-left: 5px solid #2b2b2b;           
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(225deg);           
+        }
+
+    </style>
+
+</head>
+<body>
+    <div id="base">
+        <div id="numb">0</div>
+        <div id="keys">
+            <div id="up">
+                <div id="up_arrow"></div>
+            </div>
+            <div id="down">
+                <div id="down_arrow"></div>
+            </div>
+        </div>
+    </div>
+
+<script>
+    var numb = document.querySelector('#numb');
+    var up = document.querySelector('#up');
+    var down = document.querySelector('#down');
+    var count = 0;
+
+ 
+    up.onclick = function() {
+        
+        numb.textContent = Number(numb.textContent)+1;
+    };
+    down.onclick = function() {
+        
+        numb.textContent = Number(numb.textContent)-1;
+    };
+
+    up.onmousedown = function() {
+        up.style.backgroundColor = '#fac28a';
+    }
+    up.onmouseup = function() {
+        up.style.backgroundColor = '#fbf2e9';
+    }
+    
+    down.onmousedown = function() {
+        down.style.backgroundColor = '#fac28a';
+    }
+    down.onmouseup = function() {
+        down.style.backgroundColor = '#fbf2e9';
+    }
+    
+</script>
+
+</body>
+</html>

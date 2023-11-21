@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+    #base {
+        width: 375px;
+        height: auto;
+        background-color: #fdeedf;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    #blocks {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        margin-left: 10px;
+    }
+    button {
+        width: 90%;
+        height: 15px;
+        text-align: center;
+        font-size: 10px;
+        margin-bottom: 5px;
+        margin-top: 10px;
+    }
+    .block {
+        width: 40px;
+        height: 15px;
+        border: 1px solid #c0c0c0;
+        margin: 2px;
+    }
+</style>
+
+</head>
+<body>
+    <div id="base">
+    <div id="blocks"></div>
+    <button>Add block</button>
+</div>
+
+
+<script>
+    var btn = document.querySelector('button');
+    var blocks = document.querySelector('#blocks');
+    var block = document.querySelector('#block');
+
+    btn.onclick = function() {
+        var block = document.createElement('div');
+        block.className = 'block';
+        blocks.append(block)
+        var color =  "rgb(" + Math.round(255*Math.random()) + "," + Math.round(255*Math.random()) + "," + Math.round(255*Math.random()) + ")";
+        block.style.backgroundColor = color;
+
+        for (var i of blocks.children) {
+            i.onclick = function() {
+                this.remove();
+            }
+        }
+
+    }
+
+    
+</script>
+</body>
+</html>

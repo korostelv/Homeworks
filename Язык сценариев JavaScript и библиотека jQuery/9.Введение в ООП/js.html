@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+/////////////////// 1 ///////////////////////////
+
+class PrintMachine {
+    constructor(str,f_size,f_color,f_family) {
+        this.str = str;
+        this.f_size = f_size;
+        this.f_color = f_color;
+        this.f_family = f_family;
+    }
+    print() {
+        document.write('<span style="color: '+this.f_color+';font-size: '+this.f_size+'px; font-family: '+this.f_family+'">'+this.str+'</span>');
+        document.write('<br>')
+    }
+}
+
+text = 'hello,world';
+obj = new PrintMachine(text,40,'red','Verdana');
+obj.print()
+
+//////////////////////// 2 ////////////////////////////
+
+
+class News {
+
+    constructor(text,header,tags,data) {
+        this.text = text;
+        this.header = header;
+        this.tags = tags;
+        this.data = data;
+        this.diff_date = Math.round((new Date() - this.data)/24/60/60/1000) ;
+    }
+    
+    print() {
+        document.write('<h1>'+this.header+'</h1>');
+     
+        if (this.diff_date == 0) {
+            document.write('today');
+        }
+        else if (this.diff_date > 0 && this.diff_date <= 7) {
+            document.write(this.diff_date+' days ago');
+        }
+        else {
+            document.write(('0'+this.data.getDate()).slice(-2)+'.'+('0'+(this.data.getMonth()+1)).slice(-2)+'.'+this.data.getFullYear());
+        }
+      
+        document.write('<p>'+this.text+'</p>');
+        for (var i in this.tags) {
+            document.write(this.tags[i]+' ');
+        }
+        document.write('<br>')
+        
+    }
+}
+
+head1 = 'Lorem ipsum';
+news1 = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pulvinar neque laoreet suspendisse interdum consectetur libero id. Nulla facilisi etiam dignissim diam quis enim lobortis scelerisque. Hac habitasse platea dictumst vestibulum. Ac tortor dignissim convallis aenean. Integer quis auctor elit sed vulputate mi sit amet mauris. Sed cras ornare arcu dui vivamus arcu felis bibendum ut. Imperdiet nulla malesuada pellentesque elit eget gravida cum.';
+tag1 = ['#lorem','#ipsum'];
+date1 = new Date('2023-06-14')
+
+head2 = 'In fermentum';
+news2 = 'In fermentum posuere urna nec tincidunt praesent semper feugiat. Morbi tristique senectus et netus. Gravida neque convallis a cras. In vitae turpis massa sed elementum tempus. Commodo nulla facilisi nullam vehicula ipsum. Varius quam quisque id diam vel.';
+tag2 = ['#lorem','#fermentum']
+date2 = new Date('2023-06-22')
+
+obj1 = new News(news1,head1,tag1,date1);
+obj2 = new News(news2,head2,tag2,date2);
+
+
+// obj1.print();
+// obj2.print();
+
+//////////////////////// 3 /////////////////////////
+
+class NewsAll  {
+    constructor(text,header,tags,data) {
+        this.text = text;
+        this.header = header;
+        this.tags = tags;
+        this.data = data;
+        this.newsArr = [];
+        this.diff_date = Math.round((new Date() - this.data)/24/60/60/1000);
+    }
+    //добавление новости
+    addNews(obj) {
+        this.newsArr.push(obj);
+    }
+    //количество новостей
+    getCountNews (){
+        document.write('Количество новостей: '+this.newsArr.length)
+    }
+    //ВЫвести все новости
+    print() {
+        for (var i in this.newsArr){
+            document.write('<h1>'+this.newsArr[i].header+'</h1>');
+            if (this.newsArr[i].diff_date == 0) {
+            document.write('today');
+            }
+            else if (this.newsArr[i].diff_date > 0 && this.newsArr[i].diff_date <= 7) {
+                document.write(this.newsArr[i].diff_date+' days ago');
+            }
+            else {
+                document.write(('0'+this.newsArr[i].data.getDate()).slice(-2)+'.'+('0'+(this.newsArr[i].data.getMonth()+1)).slice(-2)+'.'+this.newsArr[i].data.getFullYear());
+            }
+        
+            document.write('<p>'+this.newsArr[i].text+'</p>');
+            for (var i in this.newsArr[i].tags) {
+                document.write(this.newsArr[i].tags[i]+' ');
+            }
+            document.write('<br>')
+            }
+    }
+    //Удаление новости по заголовку
+    delNews(head) {
+        for (var i in this.newsArr){
+            if (this.newsArr[i].header == head) {
+                this.newsArr.splice(i,1)
+            }
+        }
+    }
+    //СОбрать массив по тегу
+   findTag (tag) {
+        this.arr_tag = [];
+        for (var i in this.newsArr) {
+            for (var j in this.newsArr[i].tags) {
+                if(this.newsArr[i].tags[j] == tag){
+                    this.arr_tag.push(this.newsArr[i]);              
+                }
+            }   
+        }
+        return this.arr_tag;
+        } 
+   //Сортировка по дате
+   sortDate () {
+        this.newsArr.sort((a, b) => b.data - a.data);       
+    }
+}
+
+
+
+
+n = new NewsAll;
+n.addNews(obj1)
+n.addNews(obj2)
+n.getCountNews()
+n.print()
+console.log(n.findTag('#ipsum'))
+n.sortDate()
+n.print()
+n.delNews('Lorem ipsum')
+n.getCountNews()
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
